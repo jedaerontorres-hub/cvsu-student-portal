@@ -1,0 +1,379 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #efefef;
+}
+
+/* ROOT FIX FOR REACT */
+#root {
+  min-height: 100vh;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.main-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* =========================
+   MOBILE TOPBAR
+========================= */
+
+.mobile-topbar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  background: #004b0f;
+  color: white;
+  padding: 14px 18px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.mobile-topbar h5 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#menuBtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 260px;
+  background: #004b0f;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 14px;
+  border-top-right-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 999;
+  transition: 0.4s ease;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-box img {
+  width: 75px;
+  background: white;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.portal-text h6 {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.portal-text p {
+  color: white;
+  font-size: 12px;
+  margin: 0;
+}
+
+.line {
+  height: 1px;
+  background: rgba(255,255,255,.3);
+  margin: 18px 10px;
+}
+
+.back-btn {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 0 15px;
+}
+
+/* MENU */
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.menu li {
+  margin: 5px 8px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background: #1d7b1d;
+}
+
+.menu a.active {
+  background: #52b13f;
+}
+
+/* LOGOUT */
+
+.logout {
+  padding: 0 15px;
+}
+
+.logout a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-weight: 500;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  padding: 25px;
+}
+
+/* TOPBAR */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.top-icons i {
+  font-size: 26px;
+  color: #1f6b12;
+  cursor: pointer;
+}
+
+.profile-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #1f6b12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-circle i {
+  color: white;
+  font-size: 26px;
+}
+
+/* =========================
+   GRADES CARD
+========================= */
+
+.grades-card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  min-height: 760px;
+  margin-top: 20px;
+}
+
+/* HEADER */
+
+.grades-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  gap: 20px;
+}
+
+.grades-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.semester-select {
+  width: 320px;
+  height: 50px;
+  font-size: 14px;
+}
+
+/* TABLE */
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.grades-table {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.grades-table th,
+.grades-table td {
+  border: 1px solid #d9d9d9;
+  padding: 20px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.grades-table tbody tr {
+  height: 70px;
+}
+
+/* GWA */
+
+.gwa-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid #d9d9d9;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.gwa-box span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.gwa-value {
+  background: #b9efb2;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991px) {
+
+  .sidebar {
+    width: 90px;
+    padding: 20px 10px;
+  }
+
+  .content {
+    margin-left: 90px;
+    width: calc(100% - 90px);
+  }
+
+  .portal-text,
+  .back-btn {
+    display: none;
+  }
+
+  .menu a {
+    justify-content: center;
+    padding: 14px;
+  }
+
+  .logout a {
+    justify-content: center;
+  }
+
+  .grades-card {
+    padding: 25px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .mobile-topbar {
+    display: flex;
+  }
+
+  .sidebar {
+    left: -100%;
+    width: 260px;
+    padding-top: 80px;
+  }
+
+  .sidebar.show-sidebar {
+    left: 0;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+    padding: 90px 15px 20px;
+  }
+
+  .grades-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .semester-select {
+    width: 100%;
+  }
+
+  .grades-table {
+    min-width: 700px;
+  }
+
+  .grades-card {
+    padding: 20px;
+  }
+}

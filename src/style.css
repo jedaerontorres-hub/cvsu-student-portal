@@ -1,0 +1,278 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,
+body,
+#root{
+    width:100%;
+    height:100%;
+}
+
+body{
+    overflow:hidden;
+}
+
+/* NAVBAR */
+.cvsu-navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:75px;
+    background:#0a1408;
+    display:flex;
+    align-items:center;
+    padding:0 30px;
+    z-index:1000;
+}
+
+.navbar-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.navbar-left img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+}
+
+.navbar-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.navbar-text h2 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.navbar-text span {
+    color: #cfe8cf;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* HERO */
+.hero{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("/cvsu-portal/public/building.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* LOGIN BOX */
+.login-container{
+    width:850px;
+    max-width:95%;
+
+    min-height:480px;
+
+    display:flex;
+
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+
+    margin-top:40px;
+
+    opacity:0;
+    transition:.5s;
+}
+
+/* LEFT PANEL */
+.left-panel{
+    width:35%;
+    background:#001f00;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo-card{
+    width:180px;
+    height:180px;
+
+    background:#fff;
+    border-radius:10px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+.logo-card img{
+    width:130px;
+    object-fit:contain;
+}
+
+/* RIGHT PANEL */
+.right-panel{
+    width:65%;
+    padding:45px;
+}
+
+.right-panel h1{
+    text-align:center;
+    margin-bottom:30px;
+    color:#111;
+    font-size:32px;
+}
+
+/* INPUT GROUP */
+.input-group {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* INPUT BOX */
+.input-box {
+    position: relative;
+    width: 100%;
+}
+
+.input-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #777;
+    z-index: 2;
+}
+
+.input-box input {
+    width: 100%;
+    height: 48px;
+    padding: 0 15px 0 45px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    display: block;
+}
+
+.input-box input:focus {
+    border-color: #006400;
+    box-shadow: 0 0 6px rgba(0,100,0,.2);
+}
+
+/* FORGOT */
+.forgot{
+    margin-bottom:15px;
+}
+
+.forgot a{
+    text-decoration:none;
+    color:#0066ff;
+    font-size:14px;
+}
+
+/* LOGIN BUTTON */
+.btn-login{
+    width:100%;
+    height:48px;
+
+    border:none;
+    border-radius:6px;
+
+    background:#006400;
+    color:white;
+
+    font-weight:600;
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.btn-login:hover{
+    background:#008000;
+}
+
+/* SIGNUP */
+.signup{
+    text-align:center;
+    margin-top:20px;
+}
+
+.signup a{
+    color:#0066ff;
+    text-decoration:none;
+}
+
+/* ANIMATIONS */
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .login-container{
+        flex-direction:column;
+        width:95%;
+    }
+
+    .left-panel,
+    .right-panel{
+        width:100%;
+    }
+
+    .left-panel{
+        padding:30px 0;
+    }
+
+    .right-panel{
+        padding:25px;
+    }
+
+    .right-panel h1{
+        font-size:24px;
+    }
+
+    .navbar-left h2{
+        font-size:14px;
+    }
+
+    .navbar-left img{
+        width:45px;
+        height:45px;
+    }
+}

@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  overflow-x: hidden;
+}
+
+/* MAIN LAYOUT */
+.main-container {
+  display: flex;
+}
+
+/* =========================
+   MOBILE TOPBAR
+========================= */
+.mobile-topbar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  background: #004b0f;
+  color: white;
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+}
+
+.mobile-topbar button {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 28px;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  width: 260px;
+  background: #004b0f;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 14px;
+  border-top-right-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 999;
+  transition: 0.3s ease;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-box img {
+  width: 75px;
+  background: white;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.portal-text h6 {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.portal-text p {
+  color: white;
+  font-size: 12px;
+  margin: 0;
+}
+
+.line {
+  height: 1px;
+  background: rgba(255,255,255,.3);
+  margin: 18px 10px;
+}
+
+.back-btn {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 0 15px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.menu li {
+  margin: 5px 8px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background: #1d7b1d;
+}
+
+.menu a.active {
+  background: #52b13f;
+}
+
+.logout {
+  padding: 0 15px;
+}
+
+.logout a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-weight: 500;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.content {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  padding: 30px;
+}
+
+/* =========================
+   TOPBAR ICONS
+========================= */
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 25px;
+}
+
+.top-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.top-icons i {
+  font-size: 26px;
+  color: #1f6b12;
+  cursor: pointer;
+}
+
+.profile-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1f6b12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-circle i {
+  color: white;
+  font-size: 26px;
+}
+
+/* =========================
+   COURSE CARD
+========================= */
+.course-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 3px 15px rgba(0,0,0,.08);
+}
+
+.card-header-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.card-header-custom h5 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.semester-select {
+  max-width: 260px;
+}
+
+/* TABLE */
+.course-table {
+  margin-bottom: 0;
+}
+
+.course-table thead {
+  background: #f5f5f5;
+}
+
+.course-table th {
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid #ddd;
+}
+
+.course-table td {
+  border: 1px solid #ddd;
+}
+
+.course-table tbody tr:hover {
+  background: #f8fff8;
+}
+
+.course-table td.status {
+  color: #0f6614;
+  font-weight: 700;
+}
+
+/* TOTAL UNITS */
+.total-units {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.total-units span {
+  font-weight: 600;
+}
+
+.units-badge {
+  background: #52b13f;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+  .mobile-topbar {
+    display: flex;
+  }
+
+  .sidebar {
+    left: -100%;
+    width: 260px;
+    padding-top: 80px;
+  }
+
+  .sidebar.show-sidebar {
+    left: 0;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+    padding: 90px 15px 20px;
+  }
+
+  .card-header-custom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .semester-select {
+    width: 100%;
+  }
+}

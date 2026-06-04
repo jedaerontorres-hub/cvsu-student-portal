@@ -1,0 +1,115 @@
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* NAVBAR */
+.cvsu-navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:75px;
+  background:#0a1408;
+  display:flex;
+  align-items:center;
+  padding:0 30px;
+  z-index:1000;
+}
+
+.navbar-left{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.navbar-left img{
+  width:55px;
+  height:55px;
+  object-fit:contain;
+}
+
+.navbar-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.navbar-text h2 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.navbar-text span {
+  color: #cfe8cf;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* MAIN BACKGROUND */
+.main-wrapper {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("/building.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* CARD */
+.glass-card {
+  color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  padding: 35px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* BUTTON */
+.signup-btn{
+  background:#006400;
+  border:none;
+  padding:12px;
+  font-size:18px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.signup-btn:hover{
+  transform:translateY(-2px);
+}
+
+/* LINK */
+.login-link{
+  color:#0a7a00;
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .glass-card{
+    padding:25px;
+  }
+}
