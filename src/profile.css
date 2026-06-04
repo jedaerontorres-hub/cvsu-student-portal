@@ -19,8 +19,6 @@ body{
   display:none;
 }
 
-/* SIDEBAR */
-
 .sidebar{
   width:260px;
   background:#004b0f;
@@ -212,7 +210,6 @@ body{
   margin-bottom: 25px;
 }
 
-/* Name style */
 .profile-name-input {
   border: none;
   background: transparent;
@@ -223,7 +220,6 @@ body{
   max-width: 420px;
 }
 
-/* Course under name */
 .profile-course-input {
   border: none;
   background: transparent;
@@ -245,15 +241,13 @@ body{
   font-weight: 500;
 }
 
-/* INPUT FIELDS (MAKE SHORTER / CLEANER) */
-
 .profile-name-input {
   border: none;
   background: transparent;
   font-size: 34px;
   font-weight: 700;
   width: 100%;
-  max-width: 420px;   /* 👈 LIMIT WIDTH */
+  max-width: 420px; 
   margin-bottom: 10px;
   color: #111;
   outline: none;
@@ -263,17 +257,16 @@ body{
   border: none;
   background: transparent;
   width: 100%;
-  max-width: 420px;   /* 👈 LIMIT WIDTH */
+  max-width: 420px;
   color: #666;
   font-size: 15px;
   margin-bottom: 25px;
   outline: none;
 }
 
-/* INFO GRID INPUTS */
 .info-grid input {
   width: 100%;
-  max-width: 1030px;   /* 👈 SHORTER BOX */
+  max-width: 1030px; 
   border: none;
   background: #f5f5f5;
   padding: 10px 12px;
@@ -282,7 +275,6 @@ body{
   transition: 0.3s;
 }
 
-/* make layout cleaner spacing */
 .info-grid {
   display: grid;
   grid-template-columns: 160px 1fr;
@@ -335,8 +327,6 @@ body{
     rgba(0,75,15,.2)
   );
 }
-
-/* MOBILE */
 
 @media(max-width:768px){
 

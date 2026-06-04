@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../register.css";
@@ -23,47 +24,54 @@ function Register() {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
+  if (password !== confirmPassword) {
+    return setAlert({
+      message: "Passwords do not match",
+      type: "danger",
+    });
+  }
+
+  if (!terms) {
+    return setAlert({
+      message: "You must agree to terms",
+      type: "danger",
+    });
+  }
+
   try {
-    const res = await fetch("http://localhost/STUDENT_PORTAL/api/register.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify({
+    const res = await axios.post(
+      "http://localhost/STUDENT_PORTAL/api/register.php",
+      {
         fullname,
         email,
         password,
-      }),
-    });
+      }
+    );
 
-    const text = await res.text();
-    console.log("RAW:", text);
-
-    let data;
-    try {
-      data = JSON.parse(text);
-    } catch (err) {
-      throw new Error("Invalid JSON from server");
-    }
-
-    if (password !== confirmPassword) {
-      return setAlert({ message: "Passwords do not match", type: "danger" });
-    }
-
-    if (!terms) {
-      return setAlert({ message: "You must agree to terms", type: "danger" });
-    }
+    const data = res.data;
 
     if (data.message) {
-      setAlert({ message: data.message, type: "success" });
-    } else {
-      setAlert({ message: data.error || "Registration failed", type: "danger" });
-    }
+      setAlert({
+        message: data.message,
+        type: "success",
+      });
 
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
+    } else {
+      setAlert({
+        message: data.error || "Registration failed",
+        type: "danger",
+      });
+    }
   } catch (err) {
-    console.log("ERROR:", err);
-    setAlert({ message: "Server error (check PHP/XAMPP)", type: "danger" });
+    console.error(err);
+
+    setAlert({
+      message: "Server error (check PHP/XAMPP)",
+      type: "danger",
+    });
   }
 };
   return (

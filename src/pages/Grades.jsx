@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../grades.css";
@@ -12,7 +13,6 @@ function Grades() {
 
   const user = JSON.parse(localStorage.getItem("user"));
 
-  // ✅ SIDEBAR TOGGLE (FIXED)
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
@@ -21,11 +21,11 @@ function Grades() {
   useEffect(() => {
     if (!user?.id) return;
 
-    fetch(
-      `http://localhost/STUDENT_PORTAL/api/get_grades.php?student_id=${user.id}&semester=${semester}`
-    )
-      .then((res) => res.json())
-      .then((data) => setGrades(data))
+    axios
+      .get(
+        `http://localhost/STUDENT_PORTAL/api/get_grades.php?student_id=${user.id}&semester=${semester}`
+      )
+      .then((res) => setGrades(res.data))
       .catch((err) => console.log(err));
   }, [semester, user]);
 
@@ -33,18 +33,16 @@ function Grades() {
   useEffect(() => {
     if (!user?.id) return;
 
-    fetch(
-      `http://localhost/STUDENT_PORTAL/api/get_gpa.php?student_id=${user.id}&semester=${semester}`
-    )
-      .then((res) => res.json())
-      .then((data) => setGpa(data.gpa))
+    axios
+      .get(
+        `http://localhost/STUDENT_PORTAL/api/get_gpa.php?student_id=${user.id}&semester=${semester}`
+      )
+      .then((res) => setGpa(res.data.gpa))
       .catch((err) => console.log(err));
   }, [semester, user]);
 
   return (
     <div className="main-container">
-
-      {/* MOBILE TOPBAR */}
       <div className="mobile-topbar">
         <button id="menuBtn" onClick={toggleSidebar}>
           <i className="bi bi-list"></i>
@@ -66,8 +64,6 @@ function Grades() {
           </div>
 
           <div className="line"></div>
-
-          {/* BACK */}
           <Link to="/landing" className="back-btn">
             <i className="bi bi-arrow-left"></i>
           </Link>
@@ -115,7 +111,6 @@ function Grades() {
 
         </div>
 
-        {/* LOGOUT (FIXED - NO PAGE RELOAD) */}
         <div className="logout">
           <Link
             to="/"

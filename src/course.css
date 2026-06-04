@@ -15,9 +15,6 @@ body {
   display: flex;
 }
 
-/* =========================
-   MOBILE TOPBAR
-========================= */
 .mobile-topbar {
   display: none;
   align-items: center;
@@ -38,9 +35,6 @@ body {
   font-size: 28px;
 }
 
-/* =========================
-   SIDEBAR
-========================= */
 .sidebar {
   width: 260px;
   background: #004b0f;
@@ -138,18 +132,12 @@ body {
   font-weight: 500;
 }
 
-/* =========================
-   CONTENT
-========================= */
 .content {
   margin-left: 260px;
   width: calc(100% - 260px);
   padding: 30px;
 }
 
-/* =========================
-   TOPBAR ICONS
-========================= */
 .topbar {
   display: flex;
   justify-content: flex-end;
@@ -183,9 +171,6 @@ body {
   font-size: 26px;
 }
 
-/* =========================
-   COURSE CARD
-========================= */
 .course-card {
   background: white;
   border-radius: 12px;
@@ -259,9 +244,6 @@ body {
   font-weight: 600;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 @media (max-width: 768px) {
 
   .mobile-topbar {

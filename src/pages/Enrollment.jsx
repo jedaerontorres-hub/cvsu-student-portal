@@ -23,16 +23,12 @@ function Enrollment() {
     units: 3,
   });
 
-  // ✅ DEFAULT = 2ND SEMESTER
   const [semester, setSemester] = useState("2nd");
 
   const schoolYear = "2025-2026";
 
   const API = "http://localhost/STUDENT_PORTAL/api";
 
-  // =========================
-  // LOAD SUBJECTS
-  // =========================
   const loadSubjects = async () => {
     try {
       const res = await axios.get(
@@ -48,9 +44,6 @@ function Enrollment() {
     loadSubjects();
   }, [semester]);
 
-  // =========================
-  // ADD SUBJECT
-  // =========================
   const addSubject = async () => {
     try {
       const res = await axios.post(
@@ -87,9 +80,6 @@ function Enrollment() {
     }
   };
 
-  // =========================
-  // DROP SUBJECT
-  // =========================
   const dropSubject = async (id) => {
     try {
       await axios.get(`${API}/delete_enrollment.php?id=${id}`);
@@ -101,9 +91,6 @@ function Enrollment() {
 
   const totalUnits = subjects.reduce((sum, s) => sum + Number(s.units), 0);
 
-  // =========================
-  // PRINT
-  // =========================
   const printForm = () => {
     const content = document.getElementById("print-area").innerHTML;
     const win = window.open("", "", "width=900,height=650");
@@ -118,10 +105,7 @@ function Enrollment() {
     win.document.close();
     win.print();
   };
-
-  // =========================
-  // MODAL
-  // =========================
+  
   const openModal = (type) => {
     setModal({ show: true, type });
   };

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../style.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -17,40 +18,34 @@ function Login() {
   }, []);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const res = await fetch(
-        "http://localhost/STUDENT_PORTAL/api/login.php",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-            password,
-          }),
-        }
+  try {
+    const res = await axios.post(
+      "http://localhost/STUDENT_PORTAL/api/login.php",
+      {
+        email,
+        password,
+      }
+    );
+
+    const data = res.data;
+
+    if (data.message) {
+      localStorage.setItem(
+        "user",
+        JSON.stringify(data.user)
       );
 
-      const data = await res.json();
-
-      if (data.message) {
-        localStorage.setItem(
-          "user",
-          JSON.stringify(data.user)
-        );
-
-        navigate("/landing");
-      } else {
-        alert(data.error || "Invalid email or password");
-      }
-    } catch (error) {
-      console.log(error);
-      alert("Server error (check API / XAMPP)");
+      navigate("/landing");
+    } else {
+      alert(data.error || "Invalid email or password");
     }
-  };
+  } catch (error) {
+    console.error(error);
+    alert("Server error (check API / XAMPP)");
+  }
+};
 
   return (
     <>

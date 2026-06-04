@@ -19,7 +19,6 @@ export const scheduleData = [
   { subject: "DCIT 26", room: "COMLAB 3", day: "FRI", start: "1:00 PM", end: "3:00 PM" },
 ];
 
-// ✅ FIXED TIME SLOTS (THIS WAS MISSING)
 const timeSlots = [
   "7:00 AM",
   "8:00 AM",

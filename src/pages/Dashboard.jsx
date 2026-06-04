@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../dashboard.css";
 
@@ -22,16 +23,15 @@ function Dashboard() {
 
       // ⭐ FETCH GPA
       if (parsed?.id) {
-        fetch(
-          `http://localhost/STUDENT_PORTAL/api/get_gpa.php?student_id=${parsed.id}&semester=2nd`
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            setGpa(data.gpa || "0.00");
-          })
-          .catch((err) => console.log(err));
-      }
-    }
+        axios
+          .get(
+            `http://localhost/STUDENT_PORTAL/api/get_gpa.php?student_id=${parsed.id}&semester=2nd`
+          )
+          .then((res) => {
+            setGpa(res.data.gpa || "0.00");
+          });
+              }
+            }
   }, [navigate]);
 
   // SIDEBAR TOGGLE

@@ -15,13 +15,10 @@ body{
   min-height:100vh;
 }
 
-/* ================= MOBILE TOPBAR ================= */
-
 .mobile-topbar{
   display:none;
 }
 
-/* ================= SIDEBAR ================= */
 
 .sidebar{
   width:260px;
@@ -39,7 +36,6 @@ body{
   transition:0.3s ease;
 }
 
-/* IMPORTANT FIX FOR REACT TOGGLE */
 .sidebar.show-sidebar{
   left:0;
 }
@@ -114,7 +110,6 @@ body{
   background:#52b13f;
 }
 
-/* LOGOUT */
 .logout{
   padding:0 15px;
 }
@@ -127,8 +122,6 @@ body{
   align-items:center;
   font-weight:500;
 }
-
-/* ================= CONTENT ================= */
 
 .content{
   margin-left:260px;
@@ -144,14 +137,12 @@ body{
   flex-direction:column; 
 }
 
-/* Welcome text alignment */
 .welcome{
   width:100%;
   display:block;
   text-align:left !important;
 }
 
-/* Name styling */
 .welcome h2{
   font-size:35px;
   font-weight:700;
@@ -162,8 +153,6 @@ body{
 .welcome p{
   margin:0;
 }
-
-/* ================= CARDS ================= */
 
 .info-card{
   border:none;
@@ -195,8 +184,6 @@ body{
 .card2{ background:#f3e7b5; }
 .card3{ background:#b9f1d0; }
 
-/* ================= CONTENT BOX ================= */
-
 .content-box{
   background:white;
   border-radius:12px;
@@ -206,7 +193,6 @@ body{
   width:100%;
 }
 
-/* FIX ALIGNMENT ISSUE */
 .row.align-items-stretch > div{
   display:flex;
 }
@@ -226,8 +212,6 @@ body{
   font-size:13px;
   cursor:pointer;
 }
-
-/* ================= SCHEDULE ================= */
 
 .class-item{
   border:1px solid #ddd;
@@ -256,14 +240,12 @@ body{
   word-spacing:6px;
 }
 
-/* MAKE RIGHT BOX SAME HEIGHT LOOK */
 .my-classes-box{
   min-height:95%;
   display:flex;
   flex-direction:column;
 }
 
-/* SUBJECT GRID */
 .subjects-container{
   display:grid;
   grid-template-columns:1fr;
@@ -273,7 +255,6 @@ body{
   margin-bottom: 20px;
 }
 
-/* SUBJECT CARDS */
 .subject-card{
   padding:12px 14px;
   border-radius:12px;
@@ -287,7 +268,6 @@ body{
   transition:0.3s ease;
 }
 
-/* HOVER EFFECT */
 .subject-card:hover{
   transform:translateX(5px);
 }
@@ -314,16 +294,12 @@ body{
   color:#2f6b1a;
 }
 
-/* ================= MOBILE ICON ================= */
-
 .menu-icon{
   display:none;
   font-size:30px;
   color:white;
   cursor:pointer;
 }
-
-/* ================= TABLET ================= */
 
 @media(max-width:991px){
 
@@ -356,7 +332,6 @@ body{
   }
 }
 
-/* ================= MOBILE ================= */
 
 @media(max-width:768px){
 

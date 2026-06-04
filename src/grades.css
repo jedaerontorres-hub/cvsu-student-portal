@@ -1,6 +1,3 @@
-/* =========================
-   GLOBAL RESET
-========================= */
 
 * {
   margin: 0;
@@ -19,23 +16,14 @@ body {
   background: #efefef;
 }
 
-/* ROOT FIX FOR REACT */
 #root {
   min-height: 100vh;
 }
-
-/* =========================
-   LAYOUT
-========================= */
 
 .main-container {
   display: flex;
   min-height: 100vh;
 }
-
-/* =========================
-   MOBILE TOPBAR
-========================= */
 
 .mobile-topbar {
   display: none;
@@ -64,10 +52,6 @@ body {
   font-size: 30px;
   cursor: pointer;
 }
-
-/* =========================
-   SIDEBAR
-========================= */
 
 .sidebar {
   width: 260px;
@@ -124,8 +108,6 @@ body {
   padding: 0 15px;
 }
 
-/* MENU */
-
 .menu {
   list-style: none;
   padding: 0;
@@ -155,8 +137,6 @@ body {
   background: #52b13f;
 }
 
-/* LOGOUT */
-
 .logout {
   padding: 0 15px;
 }
@@ -169,10 +149,6 @@ body {
   align-items: center;
   font-weight: 500;
 }
-
-/* =========================
-   CONTENT
-========================= */
 
 .content {
   margin-left: 260px;
@@ -215,10 +191,6 @@ body {
   font-size: 26px;
 }
 
-/* =========================
-   GRADES CARD
-========================= */
-
 .grades-card {
   background: white;
   border-radius: 12px;
@@ -228,8 +200,6 @@ body {
   min-height: 760px;
   margin-top: 20px;
 }
-
-/* HEADER */
 
 .grades-header {
   display: flex;
@@ -249,8 +219,6 @@ body {
   height: 50px;
   font-size: 14px;
 }
-
-/* TABLE */
 
 .table-responsive {
   overflow-x: auto;
@@ -275,8 +243,6 @@ body {
   height: 70px;
 }
 
-/* GWA */
-
 .gwa-box {
   display: flex;
   justify-content: flex-end;
@@ -298,10 +264,6 @@ body {
   font-size: 14px;
   font-weight: 600;
 }
-
-/* =========================
-   TABLET
-========================= */
 
 @media (max-width: 991px) {
 
@@ -333,10 +295,6 @@ body {
     padding: 25px;
   }
 }
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 768px) {
 

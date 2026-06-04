@@ -16,16 +16,10 @@ body {
   min-height: 100vh;
 }
 
-/* =========================
-   MOBILE TOPBAR
-========================= */
 .mobile-topbar {
   display: none;
 }
 
-/* =========================
-   SIDEBAR
-========================= */
 .sidebar {
   width: 260px;
   background: #004b0f;
@@ -133,9 +127,6 @@ body {
   font-weight: 500;
 }
 
-/* =========================
-   CONTENT AREA
-========================= */
 .content {
   margin-left: 260px;
   width: calc(100% - 260px);
@@ -177,9 +168,6 @@ body {
   color: white;
 }
 
-/* =========================
-   SCHEDULE CARD
-========================= */
 .schedule-container {
   background: white;
   border-radius: 10px;
@@ -250,9 +238,6 @@ body {
   margin-top: 2px;
 }
 
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
 @media (max-width: 768px) {
 
   /* TOPBAR */

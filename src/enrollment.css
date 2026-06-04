@@ -15,8 +15,6 @@ body{
   min-height:100vh;
 }
 
-/* ================= SIDEBAR ================= */
-
 .sidebar{
   width:260px;
   background:#004b0f;
@@ -111,15 +109,11 @@ body{
   font-weight:500;
 }
 
-/* ================= CONTENT ================= */
-
 .content{
   margin-left:260px;
   width:calc(100% - 260px);
   padding:25px;
 }
-
-/* ================= TOPBAR FIX ================= */
 
 .topbar{
   display:flex;
@@ -129,7 +123,6 @@ body{
   flex-wrap:wrap;
 }
 
-/* 🔥 FIX: LEFT ALIGN WELCOME */
 .welcome{
   text-align:left;
 }
@@ -145,8 +138,6 @@ body{
   margin:0;
   color:#111;
 }
-
-/* ================= ICONS ================= */
 
 .top-icons{
   display:flex;
@@ -167,8 +158,6 @@ body{
   align-items:center;
 }
 
-/* ================= PAGE HEADER ================= */
-
 .page-header{
   display:flex;
   justify-content:space-between;
@@ -184,8 +173,6 @@ body{
   font-weight:700;
 }
 
-/* ================= CARD ================= */
-
 .card-box{
   background:white;
   padding:25px;
@@ -193,8 +180,6 @@ body{
   box-shadow:0 2px 10px rgba(0,0,0,0.08);
   margin-bottom:25px;
 }
-
-/* ================= QUICK ACTION ================= */
 
 .quick-action{
   background:white;
@@ -236,39 +221,26 @@ body{
   display: block;
 }
 
-/* HOVER EFFECT */
 .action-card:hover {
   transform: translateY(-6px);
 }
 
-/* ================= COLORS ================= */
-
-/* ADD */
 .action-card.add {
   background: linear-gradient(135deg, #e2e2e22c, #165802);
 }
 
-/* DROP */
 .action-card.drop {
   background: linear-gradient(135deg, #e2e2e22c, #700505);
 }
 
-/* PRINT */
 .action-card.print {
   background: linear-gradient(135deg, #e2e2e22c, #05376d);
 }
 
-/* DOWNLOAD */
 .action-card.download {
   background: linear-gradient(135deg, #e2e2e22c, #885309);
 }
 
-/* SCHEDULE */
-.action-card.schedule {
-  background: linear-gradient(135deg, #e2e2e22c, #2f0975);
-}
-
-/* BACKDROP */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -282,7 +254,6 @@ body{
   z-index: 9999;
 }
 
-/* CENTER MODAL */
 .modal-center {
   background: white;
   width: 420px;
@@ -294,7 +265,6 @@ body{
   animation: pop 0.2s ease-in-out;
 }
 
-/* ANIMATION */
 @keyframes pop {
   from {
     transform: scale(0.9);
@@ -306,13 +276,9 @@ body{
   }
 }
 
-/* ================= MOBILE TOPBAR ================= */
-
 .mobile-topbar{
   display:none;
 }
-
-/* ================= RESPONSIVE ================= */
 
 @media(max-width:992px){
   .content{
